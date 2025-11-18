@@ -25,12 +25,11 @@ All Expert Mode features, plus:
 
 ### Installing the Mod
 1. Download the latest release of HardcoreMode
-2. Navigate to your Aviassembly installation folder:
+2. Navigate to your Aviassembly installation folder, and find the BepInEx directory:
    ```
-   Steam: steamapps/common/Aviassembly/BepInEx/plugins/
+   Steam: steamapps/common/Aviassembly/BepInEx/
    ```
-3. Create a folder named `HardcoreMode` if it doesn't exist
-4. Copy all mod files into the `HardcoreMode` folder
+4. Copy the `plugins` folder into the `BepInEx` directory
 5. Launch the game - the mod will load automatically
 
 The mod files should be located at:

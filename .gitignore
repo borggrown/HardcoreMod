@@ -30,7 +30,6 @@ C:/Program Files (x86)/Steam/steamapps/common/Aviassembly/BepInEx/plugins/
 #############################
 
 # Ignore built asset bundles in the output directory
-assets/
 *.assetbundle
 *.unity3d
 

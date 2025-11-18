@@ -81,8 +81,8 @@ namespace HardcoreMode {
             var oldDiffSelector = diffSelector.GetComponent<DifficultySelector>();
         
             var newDiffSelector = diffSelector.AddComponent<NewDifficultySelector>();
-            newDiffSelector.selectedColor = oldDiffSelector.selectedColor;
-            newDiffSelector.deselectedColor = oldDiffSelector.deselectedColor;
+            newDiffSelector.SelectedColor = new NewDifficultySelector.ColorPalette(oldDiffSelector.selectedColor, Color.white);
+            newDiffSelector.DeselectedColor = new NewDifficultySelector.ColorPalette(oldDiffSelector.deselectedColor, Color.black);
             newDiffSelector.Buttons = new Dictionary<GameObject, MyDifficulty> {
                 { normal, MyDifficulty.Normal },
                 { relaxed, MyDifficulty.Relaxed },

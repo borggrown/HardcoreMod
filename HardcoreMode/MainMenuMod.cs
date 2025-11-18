@@ -33,7 +33,6 @@ namespace HardcoreMode {
         }
 
         private void OnMenuLoaded() {
-            Debug.Log("On menu loaded");
             ToggleCamMovement(_configCameraSway.Value);
             _configCameraSway.SettingChanged += OnConfigCameraSwayChanged;
 
@@ -46,7 +45,6 @@ namespace HardcoreMode {
         }
 
         private void OnConfigCameraSwayChanged(object obj, EventArgs args) {
-            Debug.LogError("Setting changed!!!");
             ToggleCamMovement(_configCameraSway.Value);
         }
 
@@ -54,7 +52,6 @@ namespace HardcoreMode {
         private static void ToggleCamMovement(bool isDisabled) {
             var isActive = !isDisabled;
             var menuCam = GameObject.FindAnyObjectByType<MenuCamera>();
-            Debug.Log("Menu cam found: " + menuCam + " " + GameObject.FindObjectsByType<MenuCamera>(FindObjectsSortMode.InstanceID).Length);
             if (menuCam) {
                 menuCam.enabled = isActive;
                 menuCam.transform.Find("Bird").gameObject.SetActive(isActive);

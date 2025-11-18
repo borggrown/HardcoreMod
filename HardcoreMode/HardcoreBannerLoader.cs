@@ -21,7 +21,6 @@ namespace HardcoreMode {
                 return null;
             }
 
-            _logger.LogInfo("Bundle loaded!");
 
             // Load the UXML
             var visualTree = bundle.LoadAsset<VisualTreeAsset>("HardcoreBanner");
@@ -44,8 +43,6 @@ namespace HardcoreMode {
             var root = doc.rootVisualElement;
             visualTree.CloneTree(root);
 
-
-            _logger.LogInfo("UI created successfully!");
 
             doc.rootVisualElement.style.display = DisplayStyle.None;
             return doc;

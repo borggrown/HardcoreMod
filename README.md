@@ -57,33 +57,6 @@ Aviassembly/BepInEx/config/com.borggrown.plugins.hardcoremode.cfg
 
 Open the config file in any text editor to customize the following settings:
 
-#### [GameRules]
-
-**OnlyWholeDeliveriesMinDifficulty**
-- **Default**: Expert
-- **Options**: Relaxed, Normal, Hard, Expert, Hardcore, Dead
-- **Description**: Sets the minimum difficulty level at which partial deliveries are disabled
-
-**PreventResetsInMotionMinDifficulty**
-- **Default**: Expert
-- **Options**: Relaxed, Normal, Hard, Expert, Hardcore, Dead
-- **Description**: Sets the minimum difficulty level at which mid-flight resets are prevented (when velocity > 25)
-
-#### [Hardcore]
-
-**DisplayBanner**
-- **Default**: true
-- **Options**: true, false
-- **Description**: Whether or not to show the red banner while playing hardcore saves
-
-#### [MainMenu.Misc]
-
-**Remove Camera sway**
-- **Default**: true
-- **Options**: true, false
-- **Description**: Enabling this stops the main menu camera from moving
-
-### Example Configuration
 ```ini
 [GameRules]
 

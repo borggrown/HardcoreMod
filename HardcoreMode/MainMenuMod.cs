@@ -16,7 +16,7 @@ namespace HardcoreMode {
         {
             _configCameraSway = config.Bind("MainMenu.Misc",
                 "Remove Camera sway",
-                true,
+                false,
                 "Enabling this stops the main menu camera from moving");
 
             SceneManager.sceneLoaded += (scene, mode) => {

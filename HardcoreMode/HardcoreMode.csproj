@@ -91,12 +91,6 @@
 			<!-- Place it under an 'assets' subfolder relative to OutputPath -->
 			<TargetPath>assets\uibundle</TargetPath>
 		</None>
-		<None Include="Assets\uibundle.manifest">
-			<!-- Copy into the build output -->
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-			<!-- Place it under an 'assets' subfolder relative to OutputPath -->
-			<TargetPath>assets\uibundle.manifest</TargetPath>
-		</None>
 	</ItemGroup>
 
 

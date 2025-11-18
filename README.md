@@ -24,6 +24,7 @@ All Expert Mode features, plus:
    - Run the game once to generate BepInEx folders
 
 ### Installing the Mod
+0. **Aviassembly must be on the _experimental_ branch**
 1. Download the latest release of HardcoreMode
 2. Navigate to your Aviassembly installation folder, and find the BepInEx directory:
    ```

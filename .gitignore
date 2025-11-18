@@ -1,0 +1,106 @@
+﻿#############################
+# Build Outputs
+#############################
+
+# Standard .NET build output (even though you're overriding OutputPath)
+bin/
+obj/
+out/
+
+# Any stray Debug/Release folders
+**/Debug/
+**/Release/
+**/DebugPublic/
+**/Releases/
+
+#############################
+# Project-Specific Output
+#############################
+
+# The plugin output folder inside the game directory
+# (Your OutputPath points into Aviassembly/BepInEx/plugins)
+# Never commit build artifacts inside the actual game install.
+C:/Program Files (x86)/Steam/steamapps/common/Aviassembly/BepInEx/plugins/
+
+# In case Git sees paths with backslashes
+\Program Files (x86)\Steam\steamapps\common\Aviassembly\BepInEx\plugins/
+
+#############################
+# Asset Bundles (Output only)
+#############################
+
+# Ignore built asset bundles in the output directory
+assets/
+*.assetbundle
+*.unity3d
+
+# BUT allow source asset bundles in your project
+!Assets/**
+!*/Assets/**
+
+#############################
+# Visual Studio
+#############################
+
+.vs/
+*.user
+*.userosscache
+*.suo
+*.cache
+*.pdb
+*.mdb
+*.VC.db
+*.VC.opendb
+
+# Auto-generated JSONs
+appsettings.*.json
+
+#############################
+# Rider / JetBrains
+#############################
+
+.idea/
+.idea/**/*
+*.sln.iml
+
+#############################
+# NuGet
+#############################
+
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+nuget.config
+*.nuget.props
+*.nuget.targets
+
+#############################
+# Logs
+#############################
+
+*.log
+*.logs
+
+#############################
+# OS Files
+#############################
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+#############################
+# Other Common Noise
+#############################
+
+*.tmp
+*.temp
+*.bak
+*.backup
+*.swp
+*.tmp
+*.orig

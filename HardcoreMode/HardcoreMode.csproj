@@ -1,0 +1,109 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<BaseOutputPath>C:\Program Files (x86)\Steam\steamapps\common\Aviassembly\BepInEx\plugins</BaseOutputPath>
+
+		<!-- Prevent automatic folder nesting -->
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+
+		<!-- Your desired final output folder -->
+		<OutputPath>$(BaseOutputPath)\$(MSBuildProjectName)\</OutputPath>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="Assembly-CSharp">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Aviassembly\Aviassembly_Data\Managed\Assembly-CSharp.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="BepInEx">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Aviassembly\BepInEx\core\BepInEx.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="BepInEx.Harmony">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Aviassembly\BepInEx\core\BepInEx.Harmony.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="0Harmony">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Aviassembly\BepInEx\core\0Harmony.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Unity.InputSystem">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Aviassembly\Aviassembly_Data\Managed\Unity.InputSystem.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Unity.TextMeshPro">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Aviassembly\Aviassembly_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UnityEngine">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Aviassembly\Aviassembly_Data\Managed\UnityEngine.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UnityEngine.CoreModule">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Aviassembly\Aviassembly_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UnityEngine.InputForUIModule">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Aviassembly\Aviassembly_Data\Managed\UnityEngine.InputForUIModule.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UnityEngine.InputLegacyModule">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Aviassembly\Aviassembly_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UnityEngine.InputModule">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Aviassembly\Aviassembly_Data\Managed\UnityEngine.InputModule.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UnityEngine.TextRenderingModule">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Aviassembly\Aviassembly_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UnityEngine.UI">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Aviassembly\Aviassembly_Data\Managed\UnityEngine.UI.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UnityEngine.UIElementsModule">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Aviassembly\Aviassembly_Data\Managed\UnityEngine.UIElementsModule.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UnityEngine.UIModule">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Aviassembly\Aviassembly_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UnityEngine.AssetBundleModule">
+			<HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Aviassembly\Aviassembly_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Properties\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="Assets\uibundle">
+			<!-- Copy into the build output -->
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<!-- Place it under an 'assets' subfolder relative to OutputPath -->
+			<TargetPath>assets\uibundle</TargetPath>
+		</None>
+		<None Include="Assets\uibundle.manifest">
+			<!-- Copy into the build output -->
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<!-- Place it under an 'assets' subfolder relative to OutputPath -->
+			<TargetPath>assets\uibundle.manifest</TargetPath>
+		</None>
+	</ItemGroup>
+
+
+	<!-- Put the target here, as a direct child of <Project> -->
+	<Target Name="ShowProjectNameAfterBuild" AfterTargets="Build">
+		<Message Importance="High" Text="ProjectName = $(ProjectName)" />
+		<Message Importance="High" Text="MSBuildProjectName = $(MSBuildProjectName)" />
+	</Target>
+
+</Project>
